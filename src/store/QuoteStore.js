@@ -23,11 +23,11 @@ export const fetchQuotes = async () => {
 	const response = await fetch("https://type.fit/api/quotes");
 	const data = await response.json();
 
-	await data.filter((quote, index) => {
+	// await data.filter((quote, index) => {
 		
-		quote.id = (Date.now() + index);
-		quote.image = `https://source.unsplash.com/random/1200x400?sig=${ quote.id }`;
-	});
+	// 	quote.id = (Date.now() + index);
+	// 	quote.image = `https://source.unsplash.com/random/1200x400?sig=${ quote.id }`;
+	// });
 
 	QuoteStore.update(s => { s.quotes = data });
 }
